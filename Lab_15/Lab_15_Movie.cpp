@@ -7,7 +7,7 @@
 
 using namespace std;
 
-const int WIDTH = 10;
+const int WIDTH = 15;
 
 class Movie {
     private:
@@ -31,6 +31,7 @@ class Movie {
             cout << "Movie: " << title << endl;
             cout << setw(WIDTH) << "Year Released: " << releaseYear << endl;
             cout << setw(WIDTH) << "Screenwriter: " << screenwriter << endl;
+            cout << endl;
         }
 
 };
@@ -54,12 +55,18 @@ int main(){
         movieData.ignore();
         getline(movieData, tempScreenwriter);
 
+        // Using class setters to store temp data from file into temp Movie object
         Movie tempMovie;
         tempMovie.setTitle(tempTitle);
         tempMovie.setReleaseYear(year);
         tempMovie.setScreenwriter(tempScreenwriter);
 
+        // adding tempMovie into vector of movies
         movieVector.push_back(tempMovie);
+    }
+
+    for (auto movie: movieVector){
+        movie.print();
     }
 
     return 0;
