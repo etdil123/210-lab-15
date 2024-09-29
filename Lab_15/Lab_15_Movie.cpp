@@ -13,18 +13,18 @@ class Movie {
     private:
         string title;
         string screenwriter;
-        string releaseYear;
+        int releaseYear;
 
     public:
         // getters
         string getTitle() { return title; }
         string getScreenwriter() {return screenwriter; }
-        string getReleaseYear() {return releaseYear; }
+        int getReleaseYear() {return releaseYear; }
 
         // setters
         void setTitle(string title) {this->title = title;}
         void setScreenwriter(string screenwriter) {this->screenwriter = screenwriter;}
-        void setReleaseYear(string releaseYear) {this->releaseYear = releaseYear; } 
+        void setReleaseYear(int releaseYear) {this->releaseYear = releaseYear; } 
 
         // print method to display object attributes
         void print(){
@@ -37,7 +37,30 @@ class Movie {
 
 int main(){
 
+    vector<Movie> movieVector;
 
+    ifstream movieData("/Users/ethandilk/Desktop/Computer Science/COMSC 210 - Program Design & Data Structures/Module 5 - OOP/Lab_15/input.txt");
+
+    if (!movieData){
+        cout << "Error opening file - please try again!" << endl;
+        exit(1);
+    }
+
+    string tempTitle, tempScreenwriter;
+    int year;
+
+    while (getline(movieData, tempTitle)){
+        movieData >> year;
+        movieData.ignore();
+        getline(movieData, tempScreenwriter);
+
+        Movie tempMovie;
+        tempMovie.setTitle(tempTitle);
+        tempMovie.setReleaseYear(year);
+        tempMovie.setScreenwriter(tempScreenwriter);
+
+        movieVector.push_back(tempMovie);
+    }
 
     return 0;
 }
