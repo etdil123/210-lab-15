@@ -37,7 +37,7 @@ class Movie {
 };
 
 int main(){
-
+    // vector to store Movie objects
     vector<Movie> movieVector;
 
     ifstream movieData("/Users/ethandilk/Desktop/Computer Science/COMSC 210 - Program Design & Data Structures/Module 5 - OOP/Lab_15/input.txt");
@@ -46,7 +46,7 @@ int main(){
         cout << "Error opening file - please try again!" << endl;
         exit(1);
     }
-
+    // temporary variables to store input text from file
     string tempTitle, tempScreenwriter;
     int year;
 
@@ -64,8 +64,9 @@ int main(){
         // adding tempMovie into vector of movies
         movieVector.push_back(tempMovie);
     }
-
-    for (auto movie: movieVector){
+    
+    // Loop through each movie in vector and use print method
+    for (auto &movie: movieVector){
         movie.print();
     }
 
