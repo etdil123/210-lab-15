@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const int WIDTH = 15;
+const int WIDTH = 5;
 
 class Color{
     // private member attributes 
@@ -28,13 +28,29 @@ class Color{
             cout << setw(WIDTH) << "Red: " << red << endl;
             cout << setw(WIDTH) << "Green: " << green << endl;
             cout << setw(WIDTH) << "Blue: " << blue << endl;
+            cout << endl;
         }
 };  
 
 int main(){
 
+    Color yellow;
+    yellow.setRed(255);
+    yellow.setGreen(255);
+    yellow.setBlue(0);
+    yellow.colorPrint();
 
+    Color purple;
+    purple.setRed(128);
+    purple.setGreen(0);
+    purple.setBlue(128);
+    purple.colorPrint();
 
+    Color orange;
+    orange.setRed(255);
+    orange.setGreen(165);
+    orange.setBlue(0);
+    orange.colorPrint();
 
     return 0;
 }
