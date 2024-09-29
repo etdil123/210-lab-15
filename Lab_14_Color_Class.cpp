@@ -1,9 +1,9 @@
+// COMSC 210 | Lab 14: Color Class | Ethan Dilk
 #include <iostream>
 #include <iomanip>
-
 using namespace std;
 
-const int WIDTH = 5;
+const int WIDTH = 10;
 
 class Color{
     // private member attributes 
@@ -11,7 +11,6 @@ class Color{
         int red;
         int green;
         int blue;
-
     public:
         // getters
         int getRed() { return red; }
@@ -24,7 +23,8 @@ class Color{
         void setGreen(int g) { green = g; }
 
         // Color print method
-        void colorPrint(){
+        void print(){
+            cout << "Color Output: " << endl;
             cout << setw(WIDTH) << "Red: " << red << endl;
             cout << setw(WIDTH) << "Green: " << green << endl;
             cout << setw(WIDTH) << "Blue: " << blue << endl;
@@ -33,24 +33,26 @@ class Color{
 };  
 
 int main(){
-
+    // Creating instances of Color objects
+    // Using setter methods to store values
+    // Using print function to display output to console
     Color yellow;
     yellow.setRed(255);
     yellow.setGreen(255);
     yellow.setBlue(0);
-    yellow.colorPrint();
+    yellow.print();
 
     Color purple;
     purple.setRed(128);
     purple.setGreen(0);
     purple.setBlue(128);
-    purple.colorPrint();
+    purple.print();
 
     Color orange;
     orange.setRed(255);
     orange.setGreen(165);
     orange.setBlue(0);
-    orange.colorPrint();
+    orange.print();
 
     return 0;
 }
